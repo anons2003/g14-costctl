@@ -282,8 +282,8 @@ Add a `REFLECTIONS.md` to your repo. Sample prompts:
 - [x] `REFLECTIONS.md` with 2+ answers
 - [x] Replace group placeholders throughout README with real group number
 - [x] Add Team section with member names
-- [ ] Tag: `git tag w6-sidechallenge-v1 && git push --tags`
-- [ ] Post link in Slack `#w6-sidechallenge` thread:
+- [x] Tag: `git tag w6-sidechallenge-v1 && git push --tags`
+- [x] Post link in Slack `#w6-sidechallenge` thread:
       `G14 — https://github.com/anons2003/g14-costctl — 25/25 tests passing — implemented: list, cost, terminate, clean`
 
 Reminder: **OPTIONAL and does NOT count toward W6 score.** Recognition is

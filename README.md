@@ -1,8 +1,9 @@
-# costctl — XBrain W6 side challenge starter
+# costctl — XBrain W6 side challenge (G14)
 
-A starter scaffold for a small AWS-resource-management CLI. **The CLI structure
-is built; you implement the command logic.** Fork this repo, fill in the
-stubs, make the tests pass, customize for your group, then submit.
+A small Python CLI for managing AWS cost-related resources in the XBrain W6
+side challenge. This fork implements `list`, `cost`, `terminate`, and `clean`.
+
+**Final status:** 25/25 tests passing.
 
 > **Side challenge is OPTIONAL and does NOT count toward W6 score or bonus cap.**
 > Recognition is separate (Slack callout / Phase 2 selection / portfolio).
@@ -21,7 +22,7 @@ stubs, make the tests pass, customize for your group, then submit.
 | `tests/test_list.py`, `tests/test_terminate.py`, `tests/test_clean.py` — failing tests that define each command's behavior | Make them green |
 | Module docstrings in every `commands/*_cmd.py` — full spec, hints, AWS APIs to use | Read them carefully before coding |
 | `Makefile`, `requirements*.txt`, `.gitignore`, `LICENSE` | Untouched |
-| `sample_output/*_example.txt` | Replace with REAL outputs once your impl works |
+| `sample_output/*.txt` | Real outputs generated from the W6 AWS account |
 
 **Initial state of `make test`:** 10 passed (helpers), 15 failed (commands).
 You're done when all 25 pass.
@@ -31,8 +32,8 @@ You're done when all 25 pass.
 ## Quickstart (5 minutes)
 
 ```bash
-# 1. Fork / clone
-git clone <your-fork-url> g<N>-costctl && cd g<N>-costctl
+# 1. Clone
+git clone https://github.com/anons2003/g14-costctl.git g14-costctl && cd g14-costctl
 
 # 2. Install
 make install-dev                   # or: pip install -r requirements-dev.txt
@@ -51,7 +52,7 @@ Configure AWS credentials when you're ready to run against your account:
 
 ```bash
 aws configure                      # or set AWS_* env vars
-./costctl.py list ec2              # will throw NotImplementedError until you finish step 5
+./costctl.py list ec2
 ```
 
 ---
@@ -271,20 +272,19 @@ Add a `REFLECTIONS.md` to your repo. Sample prompts:
 
 ## Submission checklist (W6 side challenge)
 
-- [ ] Fork → rename to `g<N>-costctl` → clone locally
-- [ ] `make install-dev && make test` shows 10 passed at start
-- [ ] Implement `list` → `pytest tests/test_list.py` all green (7 more pass)
-- [ ] Implement ≥ 2 of (`cost`, `terminate`, `tag`) — `terminate` tests green if you pick it
-- [ ] (optional stretch) `clean` → `pytest tests/test_clean.py` green; or `idle` / `migrate-gp3`
-- [ ] `make test` final score reported in README (e.g. "21/25 passing")
-- [ ] Replace `sample_output/*_example.txt` with real outputs from your account
-- [ ] `REFLECTIONS.md` with 2+ answers
-- [ ] At least 3 meaningful commits (init → first command working → final polish)
-- [ ] Replace `g<N>` placeholders throughout README with your real group number
-- [ ] Add Team section with member names
+- [x] Fork → rename to `g14-costctl` → clone locally
+- [x] `make install-dev && make test` works
+- [x] Implement `list` → `pytest tests/test_list.py` all green
+- [x] Implement ≥ 2 of (`cost`, `terminate`, `tag`): implemented `cost` and `terminate`
+- [x] (optional stretch) `clean` → `pytest tests/test_clean.py` green
+- [x] `make test` final score reported in README: 25/25 passing
+- [x] Replace starter sample outputs with real outputs from the account
+- [x] `REFLECTIONS.md` with 2+ answers
+- [x] Replace group placeholders throughout README with real group number
+- [x] Add Team section with member names
 - [ ] Tag: `git tag w6-sidechallenge-v1 && git push --tags`
 - [ ] Post link in Slack `#w6-sidechallenge` thread:
-      `G<N> — <repo-url> — implemented: list, cost, terminate (21/25 tests passing)`
+      `G14 — https://github.com/anons2003/g14-costctl — 25/25 tests passing — implemented: list, cost, terminate, clean`
 
 Reminder: **OPTIONAL and does NOT count toward W6 score.** Recognition is
 separate (Slack callout / Phase 2 selection / portfolio).
@@ -299,11 +299,8 @@ MIT — see `LICENSE`.
 
 ## Team
 
-> Replace before submission:
-
-- <name 1>
-- <name 2>
-- <name 3>
+- G14
+- anons2003
 
 ---
 
